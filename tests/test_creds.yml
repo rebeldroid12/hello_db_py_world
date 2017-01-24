@@ -1,0 +1,5 @@
+database_configs:
+    host: ''
+    db: ''
+    user: ''
+    pw: ''
