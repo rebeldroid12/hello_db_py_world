@@ -9,24 +9,44 @@
 
 ## Installation:
 
-1. clone the repo:
+* clone the repo:
 
 ```git clone https://github.com/rebeldroid12/hello_db_py_world```
 
-2. get [pip](https://pip.pypa.io/en/stable/installing/)
+* get [pip](https://pip.pypa.io/en/stable/installing/)
 
-3. test pip: 
+* test pip:
+
 ```
 pip install doge
 
 doge
 ```
 
-4. pip install requirements:
+### Create [virtual env](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+
+```
+pip install virtualenv
+
+virtualenv -p /usr/bin/python2.7 db_py
+
+source db_py/bin/activate
+
+
+For when we are done:
+deactivate
+
+```
+
+### Run requirements
+* pip install requirements:
 
 ```pip install -r requirements.txt```
 
-5. trouble with [psycopg2?](http://initd.org/psycopg/docs/install.html#install-from-source)
+
+#### trouble with [psycopg2](http://initd.org/psycopg/docs/install.html#install-from-source)???
+
+### Now you are ready to start...
 
 
 ***
