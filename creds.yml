@@ -1,5 +1,5 @@
 database_configs:
     host: 'localhost'
-    db: 'test'
+    db: 'postgres'
     user: 'postgres'
     pw: 'password'

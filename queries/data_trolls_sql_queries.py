@@ -1,3 +1,6 @@
+CREATE_USER_SCRATCH_SCHEMA = """
+CREATE SCHEMA IF NOT EXISTS user_scratch"""
+
 CREATE_DATA_TROLLS_TABLE = """
 CREATE TABLE IF NOT EXISTS user_scratch.data_trolls (
 data_troll_id SERIAL PRIMARY KEY

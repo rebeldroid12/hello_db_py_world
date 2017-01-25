@@ -2,7 +2,7 @@ import utils
 import logging
 import os
 
-from queries.data_trolls_sql_queries import CREATE_DATA_TROLLS_TABLE, INSERT_INTO_DATA_TROLLS_TABLE
+from queries.data_trolls_sql_queries import CREATE_USER_SCRATCH_SCHEMA ,CREATE_DATA_TROLLS_TABLE, INSERT_INTO_DATA_TROLLS_TABLE
 
 # get directory
 directory = os.path.dirname(__file__)
@@ -113,6 +113,9 @@ db = configs['database_configs']['db']
 
 # create db connection from yaml creds
 connect_to_db = utils.connect_to_database(username=user, host=host, db_name=db, password=pw)
+
+# run create schema sql
+utils.run_sql_query(connect_to_db, CREATE_USER_SCRATCH_SCHEMA, {})
 
 # run create table sql
 utils.run_sql_query(connect_to_db, CREATE_DATA_TROLLS_TABLE, {})
