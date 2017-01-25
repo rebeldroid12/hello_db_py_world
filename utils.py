@@ -126,5 +126,10 @@ def run_sql_query(connection, query, dict_param):
 
 
 def clear_log_file(logfile):
+    # make sure log directory exists
+    try:
+        os.makedirs(os.path.dirname(logfile))
+    except OSError:
+        pass
     with open(logfile, 'w'):
         pass
