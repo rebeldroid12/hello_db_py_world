@@ -31,34 +31,6 @@ print
 # push color info
 data_troll_info.append(your_favourite_color)
 
-# flag for correct start date format
-start_date_flg = False
-
-# data troll employee start date
-# precaution to get correct date format -- ask them this question until they get it right!
-while not start_date_flg:
-
-    # employee start date -- need date format as yyyymmdd
-    employee_date = raw_input("Enter your employee start date in the YYYYMMDD format (no need for dashes or slashes): ")
-
-    if len(employee_date) == 8:             # check input is 8 chars long... it should be without dashes
-
-        # convert to python date
-        employee_start_date = utils.convert_to_date(employee_date)
-        print
-
-        # push start date info
-        data_troll_info.append(employee_start_date)
-
-        # start date is a go, roger that
-        start_date_flg = True
-
-    else:
-        # just keep going until it's a real date
-        print
-        print("***** There is a mistake in there... You entered {} *****".format(employee_date))
-        print
-
 # data troll title
 your_title = raw_input("Enter your role/title: ")
 print
@@ -97,8 +69,10 @@ while not yes_no_flg:
 
 print('***'*50)
 print
-print('Thank you for your answers. Time to populate the table user_scratch.data_trolls in the monthly snapshot ...')
+print('Thank you for your answers. Time to populate the table user_scratch.data_trolls...')
 
+
+#print(data_troll_info)
 # .....data troll information has been collected at this point.....
 
 # get db creds from secret yaml file
@@ -123,10 +97,9 @@ utils.run_sql_query(connect_to_db, CREATE_DATA_TROLLS_TABLE, {})
 # push data -- run insert sql
 utils.run_sql_query(connect_to_db, INSERT_INTO_DATA_TROLLS_TABLE,
                     {'name': data_troll_info[0],
-                     'favourite_color': data_troll_info[1],
-                     'employee_start_at': data_troll_info[2],
-                     'title': data_troll_info[3],
-                     'enjoyed_lunch_n_learn': data_troll_info[4],
+                     'favorite_color': data_troll_info[1],
+                     'title': data_troll_info[2],
+                     'enjoyed': data_troll_info[3],
                      'data_troll_start_at': utils.get_today_date()
                      })
 
