@@ -74,7 +74,6 @@ There will be one table that we will be pushing data to: user_scratch.data_troll
 Fields you will be updating via command line:
 * name (text)
 * favorite_color (text)
-* employee_start_at (date)
 * title (text)
-* enjoyed_lunch_n_learn (boolean)
+* enjoyed (boolean)
 
